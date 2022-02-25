@@ -13,11 +13,18 @@ body {
 /* HEADER / NAV BAR STYLES START */
 
 header {
+  background-image: url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   padding: 20px 35px;
   background-color: #39a6b2;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 header h1 {
@@ -25,6 +32,7 @@ header h1 {
   margin: 0;
   font-size: 36px;
   color: #fce138;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 header a {
@@ -48,7 +56,16 @@ header nav ul li a {
   padding: 10px 15px;
   font-weight: lighter;
   font-size: 1.55vw;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+header nav ul li a:hover {
+  background: #fce138;
+  color: #024e76;
+  border-radius: 15px;
+  text-shadow: none;
+}
+
 
 /* HEADER / NAVBAR STYLES END */
 
@@ -58,10 +75,10 @@ header nav ul li a {
 footer {
   background: #fce138;
   padding: 40px 35px;
-  width: 100%;
-  display:flex;
+  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 footer h2 {
@@ -89,51 +106,13 @@ section {
 .hero {
   background-image: url('../images/hero-bg.jpg');
   background-size: cover;
+  background-attachment: fixed;
   background-position: center;
-  display:flex;
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: flex-start;
 }
-
-.hero-form {
-  border: 3px solid #024e76;
-  background-color: #fce138;
-  padding: 20px;
-  color: #024e76;
-  width: 40%;
-  margin: 3.5%;
-}
-
-.hero-form h3 {
-  font-size: 24px;
-  margin: 0;
-}
-.hero-form p {
-  margin: 5px 0 15px 0;
-}
-
-.form-input {
-  border: 1px solid #024e76;
-  display: block;
-  padding: 7px 15px;
-  font-size: 16px;
-  color: #024e76;
-  width: 100%;
-  margin-bottom: 15px; 
-}
-
-.hero-form label {
-  margin: 0 5px;
-}
-
-.hero-form button {
-  color: #fce138;
-  background-color: #024e76;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-} 
 
 .hero-cta {
   width: 35%;
@@ -148,7 +127,61 @@ section {
   font-style: italic;
   font-size: 55px;
   color: #fce138;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+.hero-form {
+  border: 3px solid #024e76;
+  border-radius: 15px;
+  background-color: rgb(252, 225, 56, 0.8);
+  padding: 20px;
+  color: #024e76;
+  width: 40%;
+  margin: 3.5%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-form h3 {
+  font-size: 24px;
+  margin: 0;
+}
+.hero-form p {
+  margin: 5px 0 15px 0;
+}
+
+.form-input {
+  border: 1px solid #024e76;
+  border-radius: 10px;
+  display: block;
+  padding: 7px 15px;
+  font-size: 16px;
+  color: #024e76;
+  width: 100%;
+  margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.form-input:focus {
+  background-color: rgba(255, 255, 255, 1);
+  outline: none;
+}
+.hero-form label {
+  margin: 0 5px;
+}
+
+.hero-form button {
+  color: #fce138;
+  background-color: #024e76;
+  border-radius: 10px;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+} 
+
+.hero-form button:hover {
+  background-color: #39a6b2;  
+}
+
 /* HERO STYLES END */
 
 
@@ -157,6 +190,7 @@ section {
   font-size: 48px;
   border-bottom: 3px solid;
   color: #024e76;
+  padding-bottom: 20px;
   text-align: center;
   margin: 0 auto 35px auto;
   width: 50%;
@@ -189,6 +223,20 @@ section {
   background: #fce138;
 }
 
+.step {
+  margin: 50px auto;
+  padding-bottom: 50px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.step:not(:last-child) {
+  border-bottom: 1px solid #39a6b2;
+}
+
 .step h3 {
   color: #024e76;
   font-size: 46px;
@@ -202,32 +250,6 @@ section {
   align-items: center;
 }
 
-.steps-text p {
-  color: #39a6b2;
-  font-size: 18px;
-}
-
-.step-text {
-  flex: 12;
-}
-
-.step-text h4 {
-  font-size: 26px;
-  line-height: 1.5;
-  color: #024e76
-}
-
-.step {
-  margin: 50px auto;
-  padding-bottom: 50px;
-  width: 80%;
-  border-bottom: 1px solid #39a6b2;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .step-img {
   flex: 1 12%;
   margin-right: 20px;
@@ -235,6 +257,21 @@ section {
 
 .step-img img {
   max-width: 100%;
+}
+
+.step-text {
+  flex: 12;
+}
+
+.step-text p {
+  color: #39a6b2;
+  font-size: 18px;
+}
+
+.step-text h4 {
+  font-size: 26px;
+  line-height: 1.5;
+  color: #024e76;
 }
 
 /* WHAT YOU DO STYLES END */
@@ -250,9 +287,9 @@ section {
 
 .trainer {
   margin: 20px;
+  flex: 1;
   background: #024e76;
   color: #fce138;
-  flex: 1;
 }
 
 .trainer img {
@@ -288,14 +325,6 @@ section {
   color: #fce138;
 }
 
-.contact-info iframe {
-  height: 400px;
-}
-
-.contact-info div {
-  color: white;
-}
-
 .contact-info {
   display: flex;
   justify-content: space-between;
@@ -305,6 +334,14 @@ section {
 .contact-info > * {
   flex: 1;
   margin: 15px;
+}
+
+.contact-info iframe {
+  height: 400px;
+}
+
+.contact-info div {
+  color: white;
 }
 
 .contact-info h3 {
@@ -321,6 +358,7 @@ section {
 
 .contact-form input, .contact-form textarea {
   border: 1px solid #024e76;
+  border-radius: 10px;
   display: block;
   padding: 7px 15px;
   font-size: 16px;
@@ -328,11 +366,18 @@ section {
   width: 100%;
   margin-bottom: 15px;
   margin-top: 5px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  background-color: rgba(255, 255, 255, 1);
+  outline: none;
 }
 
 .contact-form button {
   width: 100%;
   border: none;
+  border-radius: 10px;
   background: #fce138;
   color: #024e76;
   text-align: center;
@@ -340,10 +385,14 @@ section {
   font-size: 16px;
 }
 
+.contact-form button:hover {
+  color: #fce138;
+  background: #39a6b2;
+}
+
 .contact-info a {
   color: #fce138;
 }
-
 
 /* REACH OUT STYLES END */
 
@@ -363,6 +412,7 @@ section {
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
   header {
+    position: relative;
     padding-bottom: 0;
     justify-content: center;
   }
@@ -390,7 +440,7 @@ section {
   .hero-cta, .hero-form {
     width: 100%;
   }
-
+  
   .hero-cta {
     text-align: center;
   }
@@ -398,15 +448,14 @@ section {
   .section-title {
     width: 80%;
   }
-
+  
   .trainer {
     flex: 0 70%;
   }
-
-  .contact-info iframe {
+  
+  .contact-info iframe{
     flex: 1 100%;
   }
-
 }
 
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
@@ -434,7 +483,7 @@ section {
   }
 
   .step-text {
-    flex: 100%;
+    flex: 100%;  
   }
 }
 
