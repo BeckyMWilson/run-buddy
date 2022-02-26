@@ -304,6 +304,20 @@ section {
   border-bottom: 1px solid var(--tertiary-color);
 }
 
+.step {
+  margin: 50px auto;
+  padding-bottom: 50px;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.step:not(:last-child) {
+  border-bottom: 1px solid #39a6b2;
+}
+
 .step h3 {
   color: var(--secondary-color);
   font-size: 46px;
